@@ -1,0 +1,36 @@
+@mixin legend {
+    .legend {
+        width: 400px;
+        position: absolute;
+        left: 10px;
+        bottom: 20px;
+        z-index: 3;
+        .sub-tips {
+            width: 100%;
+            .row {
+                width: 100%;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                .col{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                span {
+                    line-height: 30px;
+                }
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+            }
+        }
+        #legend .btn-legend{
+            left: 20px;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+#bagUser_manage {
+    .el-input__inner {
+        height: 30px;
+    }
+    .el-button {
+        padding: 0 10px;
+        line-height: 30px;
+        height: 30px;
+    }
+    .el-input__icon{
+        line-height: 30px !important;
+    }
+    .el-pagination.is-background .el-pager li:not(.disabled).active {
+        background-color: #007fff;
+        color: #fff;
+    }
+    .el-button--primary.search{
+        background: #0b83fe;
+    }
+}

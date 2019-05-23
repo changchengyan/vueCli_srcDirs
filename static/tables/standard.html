@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>标准工单</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="tables">
+            <div class=" table-item ">
+                <div class="inner-wrap">
+                    <div class="mainHead">
+                        <span>{{workOrder.orgName}}检修派工单</span>
+                    </div>
+                    <div class="subHead">
+                        <div class="col">
+                            <span>检修单号:</span>
+                            <span>{{workOrder.orderNum}}</span>
+                        </div>
+                        <div class="col">
+                            <span>派单时间:</span>
+                            <span>{{workOrder.orderTime}}</span>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <td><span>检修地点</span></td>
+                            <td> <input readonly type="text" placeholder="检修地点" v-model='workOrder.address'></td>
+                            <td><span>最迟处理时间</span></td>
+                            <td colspan="2">
+                                <span>{{workOrder.lastDoTime}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>紧急程度</span></td>
+                            <td>
+                                <span>{{workOrder.hurrySelect|formateHurry}}</span>
+                            </td>
+                            <td><span>检修类型</span></td>
+                            <td colspan="2">
+                                <span>{{workOrder.typeSelect}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>派单人</span></td>
+                            <td>
+                                <span>{{workOrder.orderer}}</span>
+                            </td>
+                            <td><span>处理人</span></td>
+                            <td colspan="2" class="getWorker">
+                                <span>{{workOrder.doerName}}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span>检修内容</span></td>
+                            <td colspan="4">
+                                <input type="text" placeholder="请输入检修内容" v-model="workOrder.repireContent">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td :rowspan="workOrder.productList.length+1"><span>材料清单</span></td>
+                            <td><span>材料名称</span></td>
+                            <td><span>单位</span></td>
+                            <td><span>数量</span></td>
+                        </tr>
+                        <tr v-for="(item,index) in workOrder.productList" :key="index">
+                            <td><span>{{item.name}}</span></td>
+                            <td>{{item.unit}}</td>
+                            <td><span>{{item.num?item.num:item.number}}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>派发意见</span></td>
+                            <td colspan="4"> <span>{{workOrder.orderAdvice}}</span></td>
+                        </tr>
+                        <tr class="noBorder">
+                            <td colspan="2"> <span>派发部门:{{workOrder.orderDept}}</span> </td>
+                            <td colspan="3"> <span>处理部门:{{workOrder.repairDept}}</span> </td>
+                        </tr>
+                        <tr class="noBorder">
+                            <td colspan="2"> <span>签字:</span> </td>
+                            <td colspan="3"> <span>签字:</span> </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/vue2.0.js"></script>
+    <script>
+
+        var workOrder_table = new Vue({
+            el: "#container",
+            data: {
+                workOrder: {
+                    orgName: "",
+                    orderNum: "",
+                    orderTime: "",
+                    address: "",
+                    lastDoTime: "",
+                    hurrySelect: "",
+                    typeSelect: "",
+                    orderer: "",
+                    doerName: "",
+                    repireContent: "",
+                    productList: [],
+                    orderAdvice:"",
+                    orderDept:"",
+                    repairDept:""
+                }
+            },
+            methods: {
+                
+            },
+            mounted:function(){
+                window.print()
+            },
+            created: function () {
+                 this.workOrder = JSON.parse(sessionStorage.getItem("tableContent"));
+            }
+        })
+
+    </script>
+</body>
+
+</html>

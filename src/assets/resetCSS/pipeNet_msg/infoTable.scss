@@ -1,0 +1,13 @@
+#infoTable {
+    .el-input__inner {
+        height: 30px;
+        line-height: 30px;
+    }
+    .el-input__icon {
+        line-height: 30px;
+    }
+    .el-pagination.is-background .el-pager li:not(.disabled).active {
+        background-color: #007fff;
+        color: #fff;
+    }
+}

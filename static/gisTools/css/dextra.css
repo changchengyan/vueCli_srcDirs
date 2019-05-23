@@ -1,0 +1,32 @@
+.overlay-layer div {
+    /* transform: translate(-50%, -50%); */
+    transition: transform 0.35s ease;
+    transition: opacity 0.25s ease;
+}
+
+.overlay-layer.init div {
+    opacity: 0;
+    /* transform: scale(0.9) */
+}
+
+.overlay.zooming div {
+    /* opacity: 0.5; */
+    /* display: none; */
+    transform: scale(0.5);
+    opacity: 0
+}
+
+.dextra-tooltip {
+    position: absolute;
+    pointer-events: none;
+    transition: opacity 200ms;
+}
+
+.dextra-tooltip>div {
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 4px;
+    border-color: coral;
+    box-shadow: 0px 0px 4px rgba(4, 125, 155, 0.9);
+    transform: translate3d(-50%, -125%, 0);
+}

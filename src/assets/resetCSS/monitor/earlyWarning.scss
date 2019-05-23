@@ -1,0 +1,18 @@
+#earlyWarning{
+    .el-input__inner {
+        height: 30px;
+        line-height: 30px;
+    }
+    .el-input__icon {
+        line-height: 30px;
+    }
+    .el-button{
+        padding: 0;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+    }
+    #selectTree .el-button{
+        line-height: normal;
+    }
+}
