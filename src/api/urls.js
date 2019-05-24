@@ -7,6 +7,8 @@ const VIDEOSERVICE = dse.video_api_url;
 
 export default{
 
+    // 上传文件的 接口 示例
+    uploadFile:'',
     // 通用的接口
     getSessionUser:`${SERVICES}/sysController/getSessionUser.do?r=${Math.random()}`,
     getFilePathUrl:`${SERVICES}/CommonCtrl/getFilePathUrl.do`,

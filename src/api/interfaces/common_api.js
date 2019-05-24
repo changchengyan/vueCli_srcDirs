@@ -4,6 +4,17 @@ import fetch from '../fetch';
 
 import domainURL from '../urls';
 
+import postFile from '../postFile';
+
+//  带有进度条的上传过程
+export function uploadFile(params,context) {
+    return postFile({
+        url: domainURL.uploadFile,
+        method: 'post',
+        params: params
+    },context);
+}
+
 
 // 获取session
 export function getSessionUser(context) {
