@@ -205,6 +205,19 @@ npm  run local2serve
       1、 lodash   工具库   已注册全局  使用 方式 this.funTool.unil(XXX)
       2、 vee-valitor 表单校验 已注册全局  关注官方教程
       3、 vue-echarts-v3 前端 图表类
+
+## 项目 集成的 基本包 
+      
+      1、 axios  http
+      2、 eslint  格式化 校验工具
+      3、 前端 组件 创建工具  使用方式 见 文档顶部
+
+## 部署 到 nginx中
+
+      1、 nginx 的示例代码 在 /static/ nginx.conf 中 可以参考 使用
+      2、 nginx 的 首先开启服务  start nginx.exe
+      3、 修改 nginx.conf 需要 nginx.exe -s reload 一次，静态文件上传到目录也要 reload一次  当前仅仅支持到  hash 路由， history 路由暂时没有配置成功
+
       
             
 
