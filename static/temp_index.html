@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>testconsole</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="./static/config.js"></script>
+    <script>
+      var params = window.location.search;
+      var num = params.indexOf("?")
+      params = params.substr(num + 1);
+      window.id = params.split("&")[0].split("=")[1];
+      var token = params.split("&")[2].split("=")[1];
+      sessionStorage.setItem("token",token)
+    </script>
+  </body>
+</html>
