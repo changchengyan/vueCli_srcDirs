@@ -198,6 +198,9 @@ npm  run local2serve
             
             package.json 中  配置静态文件路径  buildStaticPath = "pipe/pc/"
         
+          5. 清除无用的CSS样式  purgecss
+         webpack 具体配置详见:https://www.purgecss.com/
+        
         
         
  ## 引用的 包
